@@ -1,0 +1,16 @@
+<div class="product" >
+  <div class="product-image">
+    <img src="assets/images/{{product.image}}" alt="raspberry macaroon">
+  </div>
+  <div class="product_title">{{product.title}}</div>
+  <div class="product-price">
+    <ul>
+      <li>1 шт.</li>
+      <li>{{product.price | currency : ' руб.': 'symbol': '1.2-2': 'ru'}}</li>
+    </ul>
+  </div>
+  <div class="product-action">
+    <button type="button" class="btn product-btn" BackgroundColorBtn (click)="addProductToCart()">Заказать</button>
+    <div [class]="'cart-count'+ (countOneProduct.count ? ' show': ' close')">{{countOneProduct.count}}</div>
+  </div>
+</div>
